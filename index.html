@@ -1,143 +1,103 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>About Nicole</title>
+<title>How much do you know about dogs? </title>
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 </head>
 
 <header>
-    <img src="images/nikkitriki-main.png" ALT="nikkitrikiLogo" class="logo-home" id="logo">
-    <h1>Five fun (and not so fun) facts about me</h1>
-    <p id="firstp"> Hi! I'm Nicole Valdespino</p>
+    <img src="images/dogs.png" ALT="nikkitrikiLogo" class="logo-home" id="logo">
+    
+    <p id="firstp"> Hi there! So you love dogs huh? Let's see how much you know about them <br> Enter your name below to see instructions </p>
 
 </header>
 
 <body>
 
+
+
 <section class="grid">
-    <ol>
+    <ul>
         <div id="band0">
             <li>   
-                <h2 id= "firsth2">What's your name?:</h2>
+                <h2 id= "firsth2"> What's your name?:</h2>
                 <input type="text" id="Userinput" name="Userinput">
                 <input type="submit" value="Submit" id = "guestName">
                 
             </li>
         </div>
 
-        <div id="band1">
-            <li>   
-                <input type="text" id="number-input" placeholder="Enter your 10 digit phone number" />
-            </li>
-        </div>
+        <div id="dogs">
+            <div id="dogImage">
 
-
-
-        <div id="band1">
-            <li>   
-                <h2>I'm Mexican! <br> Click over the block to see my favorite color</h2>
-                <img src="https://images.unsplash.com/photo-1588463524464-7c15c1472342?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" width="300" height="200" >
-                <p>My family lives in a town called Queretaro two hours away from Mexico City. </p>
-                
-            </li>
-        </div>
-        <div id="band2">
-            <li>
-                <h2> I don't like chocolate</h2>
-                <img src="https://images.unsplash.com/photo-1601574494033-3c8800d80864?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1344&q=80" width="300" height="200">
-                <p> White chocolate is the absolute worst. Chocolate pretzels are ok </p>
+            </div>
             
-            </li>
+                <p id="breedTitle">What is the breed of this dog? </p>
+                <div>
+                  <input type="radio" id="one"
+                         name="contact" value="" onchange="onSelect(this)">
+                  <label id="Choice1" for = "one"></label>
+
+                  <input type="radio" id="two"
+                         name="contact" value="" onchange="onSelect(this)">
+                  <label id= "Choice2"for="two"></label>
+
+                  <input type="radio" id="three"
+                         name="contact" value="" onchange="onSelect(this)">
+                  <label id ="Choice3" for="three"></label>
+                </div>
+                <div id= "submission">
+                  <button type="submit" onclick="onSubmit()">Submit</button>
+                </div>
+               
         </div>
-        <div id="band1">
-            <li>
-                <h2>I'm an only child</h2>
-                <img src="https://images.unsplash.com/photo-1597806902117-736537e643cc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" width="300" height="200" >
-                <p> I've always wanted to have siblings, but I do have tons of cousins and we're very close</p>
-                
-            </li>
-         </div>
-
-         <div id="band2">
-            <li>
-                <h2>I can't sleep without socks</h2>
-                <img src="https://images.unsplash.com/photo-1564379976409-79bd0786fff1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" width="300" height="200" >
-                <p> I cant go to sleep if my feet aren't covered</p>
-                
-            </li>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"> </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
-
-        <div id="band1">
-            <li>
-                <h2>I love listening to true crime podcasts</h2>
-                <img src="https://images.unsplash.com/photo-1563486688110-3e8087cb4bb8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1353&q=80" width="300" height="200" >
-                <p> I'm a fan of true crime and I can listen to true crime posdcasts all day</p>
-                
-            </li>
+        <div id="totalPoints" class="modal-body">
+          test
         </div>
-    </ol>
-</section>
-
-<h2 id="center"> Look at these cute dogs! (I also love dogs)</h2>
-
-<div class="swiper-container">
-    <!-- Additional required wrapper -->
-    <div class="swiper-wrapper">
-      <!-- Slides -->
-      <div class="swiper-slide"> 
-          <img src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"  >
-      </div>
-      <div class="swiper-slide">
-        <img src="https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80"  >
-      </div>
-      <div class="swiper-slide">
-        <img src="https://images.unsplash.com/photo-1536809188428-e8ecf663d0be?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"  >
-      </div>
-      <div class="swiper-slide">
-        <img src="https://images.unsplash.com/photo-1579213838826-51de388c360c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80"  >
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Next doggo</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" style= "display: none;" id="playAgain">Play Again!</button>
+        </div>
       </div>
     </div>
-   
-    <!-- If we need navigation buttons -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-  
-   
   </div>
 
+ 
 
-<h2 id="center"> Some extra facts (why not?)</h2>
+       
 
+         
 
-<section id="table"> 
-    <button id = "HideButton">Click to hide this</button>
+        <div id="band1">
+           
+        </div>
+    </ul>
+</section>
 
-    <table border="1" width="800">
-    <tr>
-        <th>Things I like</th>
-        <th>  Things I don't like  </th> 
-    </tr>
-    <tr>
-        <td><a href="https://www.amandaoleander.com/">Amanda Oleandar's illustrations</a></td>
-        <td><a href="https://www.buzzfeed.com/samanthawieder/we-need-to-talk-about-how-fucking-gross-seafood-is">Sea food</a></td> 
-    </tr>
-        <tr>
-        <td> <a href="https://www.youtube.com/watch?v=aggqJnDkiD8">Like water for chocolate</a></td>
-        <td><a href="https://www.medicalnewstoday.com/articles/270406">Avocado</a></td> 
-    </tr>
-        <tr>
-        <td><a href="https://www.instagram.com/weratedogs/?hl=en">All types of dogs</a></td>
-        <td><a href="https://en.wikipedia.org/wiki/Superiority_complex#:~:text=A%20superiority%20complex%20is%20a,overbearing%2C%20and%20even%20aggressive%20manner.">Superiority Complex</a></td> 
-    </tr>
-    </table>
 
 </section>
-<script src= "main.js" ></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="src/index.js"></script>
 <footer>
-    <p> --------- Thanks for stopping by and don't forget to wear a mask! --------- </p>
+    <p> --------- Thanks for stopping by, don't forget to wear a mask and tell your dog I said hi! --------- </p>
   </footer>
 
 </body>
